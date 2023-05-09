@@ -309,6 +309,7 @@ jobs:
           print("done", flush=True)
       - name: Replace system and vendor
         run: |
+          ls -la ${{ matrix.arch }}/
           rm -rf ${{ matrix.arch }}/{system,vendor}.img
           wget -q https://sourceforge.net/projects/blissos-dev/files/waydroid/lineage/lineage-18.1/Lineage-OS-18.1-waydroid_x86_64-202111291420-foss-sd-hd-ex_ax86-vaapi_gles-aep.zip/download -O los.zip
           7z x los.zip -o${{ matrix.arch }}/
